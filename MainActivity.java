@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     imageView.setImageResource(R.drawable.img1);
                 }
             }
+            //dddd
 
             @Override
             public void onPageScrollStateChanged(int state) {/*empty*/}
