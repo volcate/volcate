@@ -1,10 +1,12 @@
 package com.example.a5g.indicator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.rd.PageIndicatorView;
@@ -23,8 +25,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         initViews();
+
+        Button btn_go = (Button) findViewById(R.id.button);
+        btn_go.setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+
+
 
     }
 
@@ -56,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                     imageView.setImageResource(R.drawable.img1);
                 }
             }
-            //dddd
 
             @Override
             public void onPageScrollStateChanged(int state) {/*empty*/}
